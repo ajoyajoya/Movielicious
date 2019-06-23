@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Movielicious</string>
+    <string name="movie_title">A Star is Born</string>
+    <string name="movie_category">Drama | 1h 51min | 10/21/2016</string>
+    <string name="movie_desc">Against his father Odin will, The Mighty Thor a powerful but arrogant warrior god recklessly reignites an ancient war.</string>
+    <string name="movie_rate">7,1</string>
+</resources>
