@@ -4,4 +4,35 @@
     <string name="movie_category">Drama | 1h 51min | 10/21/2016</string>
     <string name="movie_desc">Against his father Odin will, The Mighty Thor a powerful but arrogant warrior god recklessly reignites an ancient war.</string>
     <string name="movie_rate">7,1</string>
+
+    <string-array name="data_movie_name">
+        <item>A Star is Born (2018)</item>
+        <item>Aquaman (2018)</item>
+        <item>Avengers: Infinity War (2018)</item>
+    </string-array>
+
+    <string-array name="data_movie_rating">
+        <item>7.8</item>
+        <item>7.1</item>
+        <item>8.5</item>
+    </string-array>
+
+    <string-array name="data_movie_category">
+        <item>R | 2h 16min | Drama, Music, Romance | 5 October 2018 (USA)</item>
+        <item>PG-13 | 2h 23min | Action, Adventure, Fantasy | 21 December 2018 (USA)</item>
+        <item>PG-13 | 2h 29min | Action, Adventure, Sci-Fi | 27 April 2018 (USA)</item>
+    </string-array>
+
+    <string-array name="data_movie_desc">
+        <item>A musician helps a young singer find fame as age and alcoholism send his own career into a downward spiral.</item>
+        <item>Arthur Curry, the human-born heir to the underwater kingdom of Atlantis, goes on a quest to prevent a war between the worlds of ocean and land.</item>
+        <item>The Avengers and their allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos before his blitz of devastation and ruin puts an end to the universe.</item>
+    </string-array>
+
+    <string-array name="data_movie_poster">
+        <item>@drawable/poster_a_star</item>
+        <item>@drawable/poster_aquaman</item>
+        <item>@drawable/poster_avengerinfinity</item>
+    </string-array>
+
 </resources>
