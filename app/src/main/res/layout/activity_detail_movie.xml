@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/bg_movie_detail"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@drawable/blur_image_background"
-    tools:context=".DetailMovie">
+    tools:context=".DetailMovie"
+    tools:ignore="Overdraw">
 
     <RelativeLayout
         android:layout_width="fill_parent"
@@ -27,7 +27,7 @@
                 android:id="@+id/txt_movie_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
                 android:layout_marginStart="5dp"
                 android:fontFamily="@font/open_sans_bold_1"
                 android:maxLines="3"
@@ -49,7 +49,8 @@
                     android:layout_height="210dp"
                     android:background="@drawable/shadow_poster"
                     android:scaleType="fitXY"
-                    android:src="@drawable/poster_a_star" />
+                    android:src="@drawable/poster_a_star"
+                    android:contentDescription="@string/this_is_poster" />
 
                 <TextView
                     android:id="@+id/txt_movie_rate"
@@ -69,7 +70,6 @@
                     android:shadowRadius="3"/>
 
                 <TextView
-                    android:id="@+id/txt_movie_rate_max"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignBaseline="@id/txt_movie_rate"
@@ -88,13 +88,13 @@
                     android:layout_below="@id/txt_movie_rate"
                     android:layout_marginStart="5dp"
                     android:layout_marginTop="5dp"
-                    android:layout_toRightOf="@id/img_poster_movie"
+                    android:layout_toEndOf="@id/img_poster_movie"
                     android:ellipsize="end"
                     android:fontFamily="@font/open_sans"
                     android:maxLines="1"
                     android:text="@string/movie_crew_title"
                     android:textColor="@color/colorPrimaryLightest"
-                    android:textSize="10sp" />
+                    android:textSize="12sp" />
 
                 <TextView
                     android:id="@+id/txt_movie_crew_name1"
@@ -103,13 +103,13 @@
                     android:layout_below="@id/txt_movie_crew_title"
                     android:layout_marginStart="5dp"
                     android:layout_marginTop="5dp"
-                    android:layout_toRightOf="@id/img_poster_movie"
+                    android:layout_toEndOf="@id/img_poster_movie"
                     android:ellipsize="end"
                     android:fontFamily="@font/open_sans"
                     android:maxLines="1"
                     android:text="@string/movie_crew_name1"
                     android:textColor="@color/colorPrimaryLightest"
-                    android:textSize="14sp" />
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/txt_movie_crew_job1"
@@ -118,13 +118,13 @@
                     android:layout_below="@id/txt_movie_crew_name1"
                     android:layout_marginStart="5dp"
                     android:layout_marginTop="2dp"
-                    android:layout_toRightOf="@id/img_poster_movie"
+                    android:layout_toEndOf="@id/img_poster_movie"
                     android:ellipsize="end"
                     android:fontFamily="@font/open_sans"
                     android:maxLines="1"
                     android:text="@string/movie_crew_job1"
                     android:textColor="@color/colorPrimaryLightest"
-                    android:textSize="10sp" />
+                    android:textSize="12sp" />
 
                 <TextView
                     android:id="@+id/txt_movie_crew_name2"
@@ -133,13 +133,13 @@
                     android:layout_below="@id/txt_movie_crew_job1"
                     android:layout_marginStart="5dp"
                     android:layout_marginTop="10dp"
-                    android:layout_toRightOf="@id/img_poster_movie"
+                    android:layout_toEndOf="@id/img_poster_movie"
                     android:ellipsize="end"
                     android:fontFamily="@font/open_sans"
                     android:maxLines="1"
                     android:text="@string/movie_crew_name2"
                     android:textColor="@color/colorPrimaryLightest"
-                    android:textSize="14sp" />
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/txt_movie_crew_job2"
@@ -148,13 +148,13 @@
                     android:layout_below="@id/txt_movie_crew_name2"
                     android:layout_marginStart="5dp"
                     android:layout_marginTop="2dp"
-                    android:layout_toRightOf="@id/img_poster_movie"
+                    android:layout_toEndOf="@id/img_poster_movie"
                     android:ellipsize="end"
                     android:fontFamily="@font/open_sans"
                     android:maxLines="1"
                     android:text="@string/movie_crew_job2"
                     android:textColor="@color/colorPrimaryLightest"
-                    android:textSize="10sp" />
+                    android:textSize="12sp" />
 
                 <TextView
                     android:id="@+id/txt_movie_cat"
@@ -163,13 +163,13 @@
                     android:layout_below="@id/txt_movie_crew_job2"
                     android:layout_marginStart="5dp"
                     android:layout_marginTop="15dp"
-                    android:layout_toRightOf="@id/img_poster_movie"
+                    android:layout_toEndOf="@id/img_poster_movie"
                     android:ellipsize="end"
                     android:fontFamily="@font/open_sans"
                     android:maxLines="1"
                     android:text="@string/movie_category"
                     android:textColor="@color/colorPrimaryLightest"
-                    android:textSize="12sp" />
+                    android:textSize="14sp" />
 
 
             </RelativeLayout>
@@ -178,7 +178,6 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/content_wrapper"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/header_detail"
@@ -215,7 +214,8 @@
                     android:alpha="0.5"
                     android:background="@drawable/shadow_poster"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/poster_a_star">
+                    android:src="@drawable/poster_a_star"
+                    android:contentDescription="@string/this_for_background_image">
 
                 </ImageView>
 
@@ -224,7 +224,8 @@
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:alpha="0.9"
-                    android:background="@drawable/ic_play_circle_filled_white_100dp">
+                    android:background="@drawable/ic_play_circle_filled_white_100dp"
+                    android:contentDescription="@string/this_for_button">
 
                 </ImageView>
             </RelativeLayout>

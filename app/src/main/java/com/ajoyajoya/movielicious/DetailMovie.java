@@ -1,12 +1,7 @@
 package com.ajoyajoya.movielicious;
 
-import android.graphics.Bitmap;
 import android.graphics.Color;
-import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
-import android.os.Build;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -18,21 +13,23 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.transition.Transition;
-import com.bumptech.glide.request.transition.ViewAnimationFactory;
+
+import java.util.Objects;
 
 import jp.wasabeef.glide.transformations.BlurTransformation;
 
+@SuppressWarnings("ALL")
 public class DetailMovie extends AppCompatActivity {
 
     public static final String EXTRA_MOVIE = "extra_movie";
 
-    TextView tvMovieName;
-    TextView tvMovieRate;
-    TextView tvMovieCat;
-    TextView tvMovieDesc;
-    ImageView imgMoviePoster;
-    ImageView imgTrailerLink;
-    ScrollView bgMovieDetail;
+    private TextView tvMovieName;
+    private TextView tvMovieRate;
+    private TextView tvMovieCat;
+    private TextView tvMovieDesc;
+    private ImageView imgMoviePoster;
+    private ImageView imgTrailerLink;
+    private ScrollView bgMovieDetail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +37,7 @@ public class DetailMovie extends AppCompatActivity {
         setContentView(R.layout.activity_detail_movie);
 
         final String title1 = "Detail Movie";
-        setActionBarTitle(title1);
+        setActionBarTitle();
 
         // add back arrow to toolbar
         if (getSupportActionBar() != null){
@@ -66,6 +63,7 @@ public class DetailMovie extends AppCompatActivity {
         Glide.with(this).load(movie.getMoviePoster()).into(imgMoviePoster);
         Glide.with(this).load(movie.getMoviePoster()).into(imgTrailerLink);
 
+        //noinspection deprecation
         Glide.with(this).load(movie.getMoviePoster())
                 .apply(RequestOptions.bitmapTransform(new BlurTransformation(15, 3)))
                 .into(new SimpleTarget<Drawable>() {
@@ -93,8 +91,8 @@ public class DetailMovie extends AppCompatActivity {
 
     }
 
-    private void setActionBarTitle(String title){
-        getSupportActionBar().setTitle(title);
+    private void setActionBarTitle(){
+        Objects.requireNonNull(getSupportActionBar()).setTitle("Detail Movie");
     }
 
     @Override

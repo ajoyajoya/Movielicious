@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingLeft="@dimen/activity_horizontal_default"
@@ -13,7 +14,8 @@
         android:layout_height="210dp"
         android:scaleType="fitXY"
         android:src="@drawable/poster_a_star"
-        android:background="@drawable/shadow_poster"/>
+        android:background="@drawable/shadow_poster"
+        android:contentDescription="@string/this_is_poster" />
 
     <RelativeLayout
         android:id="@+id/txt_title_and_rate"
@@ -25,9 +27,9 @@
             android:id="@+id/txt_movie_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
             android:layout_marginStart="5dp"
-            android:layout_toLeftOf="@id/txt_movie_rate"
+            android:layout_toStartOf="@id/txt_movie_rate"
             android:fontFamily="@font/open_sans_bold_1"
             android:maxLines="3"
             android:text="@string/movie_title"
@@ -42,7 +44,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/txt_movie_name"
             android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
             android:layout_marginStart="10dp"
             android:background="#4CAF50"
             android:fontFamily="@font/open_sans_semibold_1"
@@ -53,7 +55,8 @@
             android:textSize="14sp"
             android:textStyle="bold"
             android:typeface="monospace"
-            android:layout_marginTop="5dp" />
+            android:layout_marginTop="5dp"
+            tools:ignore="RtlHardcoded" />
     </RelativeLayout>
 
     <TextView
@@ -63,7 +66,7 @@
         android:layout_below="@id/txt_title_and_rate"
         android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
-        android:layout_toRightOf="@id/img_poster_movie"
+        android:layout_toEndOf="@id/img_poster_movie"
         android:ellipsize="end"
         android:fontFamily="@font/open_sans"
         android:maxLines="1"
@@ -78,7 +81,7 @@
         android:layout_below="@id/txt_movie_cat"
         android:layout_marginStart="5dp"
         android:layout_marginTop="15dp"
-        android:layout_toRightOf="@id/img_poster_movie"
+        android:layout_toEndOf="@id/img_poster_movie"
         android:ellipsize="end"
         android:fontFamily="@font/open_sans"
         android:maxLines="4"

@@ -9,13 +9,11 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 
-public class MovieAdapter extends BaseAdapter {
+class MovieAdapter extends BaseAdapter {
 
-    private Context context;
+    private final Context context;
     private ArrayList<Movie> movies;
 
 
@@ -56,11 +54,11 @@ public class MovieAdapter extends BaseAdapter {
     }
 
     private class ViewHolder {
-        private TextView txtMovieName;
-        private TextView txtMovieRating;
-        private TextView txtMovieDescription;
-        private TextView txtMovieCategory;
-        private ImageView imgMoviePoster;
+        private final TextView txtMovieName;
+        private final TextView txtMovieRating;
+        private final TextView txtMovieDescription;
+        private final TextView txtMovieCategory;
+        private final ImageView imgMoviePoster;
         ViewHolder(View view) {
             txtMovieName = view.findViewById(R.id.txt_movie_name);
             txtMovieRating = view.findViewById(R.id.txt_movie_rate);

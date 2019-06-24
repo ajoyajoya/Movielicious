@@ -12,8 +12,9 @@
     <string name="movie_crew_job2">Story</string>
     <string name="trailer_title">Trailer</string>
     <string name="overview_title">Overview</string>
-
-
+    <string name="this_is_poster">This is for Poster Movie</string>
+    <string name="this_for_background_image">This for Background Image Trailer Link</string>
+    <string name="this_for_button">This for Button Play Trailer Link</string>
 
 
     <string-array name="data_movie_name">
