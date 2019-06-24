@@ -1,6 +1,9 @@
 package com.ajoyajoya.movielicious;
 
-public class Movie {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Movie implements Parcelable {
     private int moviePoster;
     private String movieName;
     private String movieRated;
@@ -48,5 +51,40 @@ public class Movie {
     }
 
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
 
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(this.moviePoster);
+        dest.writeString(this.movieName);
+        dest.writeString(this.movieRated);
+        dest.writeString(this.movieCategory);
+        dest.writeString(this.movieDesc);
+    }
+
+    public Movie() {
+    }
+
+    protected Movie(Parcel in) {
+        this.moviePoster = in.readInt();
+        this.movieName = in.readString();
+        this.movieRated = in.readString();
+        this.movieCategory = in.readString();
+        this.movieDesc = in.readString();
+    }
+
+    public static final Parcelable.Creator<Movie> CREATOR = new Parcelable.Creator<Movie>() {
+        @Override
+        public Movie createFromParcel(Parcel source) {
+            return new Movie(source);
+        }
+
+        @Override
+        public Movie[] newArray(int size) {
+            return new Movie[size];
+        }
+    };
 }

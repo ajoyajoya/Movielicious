@@ -1,9 +1,15 @@
 package com.ajoyajoya.movielicious;
 
+import android.content.Intent;
 import android.content.res.TypedArray;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -28,6 +34,26 @@ public class MainActivity extends AppCompatActivity {
 
         prepare();
         addItem();
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                //Toast.makeText(MainActivity.this, movies.get(position).getMovieName(), Toast.LENGTH_SHORT).show();
+
+                Movie movie = new Movie();
+                movie.setMovieName(movies.get(position).getMovieName());
+                movie.setMovieRated(movies.get(position).getMovieRated());
+                movie.setMovieCategory(movies.get(position).getMovieCategory());
+                movie.setMovieDesc(movies.get(position).getMovieDesc());
+                movie.setMoviePoster(movies.get(position).getMoviePoster());
+
+                Intent moveIntent = new Intent(MainActivity.this, DetailMovie.class);
+                moveIntent.putExtra(DetailMovie.EXTRA_MOVIE, movie);
+                startActivity(moveIntent);
+
+            }
+        });
     }
 
     private void addItem() {
@@ -39,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
             movie.setMovieRated(dataMovieRate[i]);
             movie.setMovieCategory(dataMovieCat[i]);
             movie.setMovieDesc(dataMovieDesc[i]);
+
             movies.add(movie);
         }
         adapter.setMovies(movies);
@@ -50,5 +77,6 @@ public class MainActivity extends AppCompatActivity {
         dataMovieCat = getResources().getStringArray(R.array.data_movie_category);
         dataMovieDesc = getResources().getStringArray(R.array.data_movie_desc);
         dataMoviePoster = getResources().obtainTypedArray(R.array.data_movie_poster);
+
     }
 }

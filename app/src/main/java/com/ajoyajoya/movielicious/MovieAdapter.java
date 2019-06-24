@@ -1,6 +1,7 @@
 package com.ajoyajoya.movielicious;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -73,6 +74,21 @@ public class MovieAdapter extends BaseAdapter {
             txtMovieCategory.setText(movie.getMovieCategory());
             txtMovieDescription.setText(movie.getMovieDesc());
             imgMoviePoster.setImageResource(movie.getMoviePoster());
+
+
+            float backgroundRating = Float.parseFloat(movie.getMovieRated());
+
+            if (backgroundRating>=8.0){
+                txtMovieRating.setBackgroundColor(Color.parseColor("#3498db"));
+            } else if (backgroundRating>=7.0){
+                txtMovieRating.setBackgroundColor(Color.parseColor("#2ecc71"));
+            } else if (backgroundRating>=6.0){
+                txtMovieRating.setBackgroundColor(Color.parseColor("#f1c40f"));
+            } else if (backgroundRating>=5.0){
+                txtMovieRating.setBackgroundColor(Color.parseColor("#e67e22"));
+            } else {
+                txtMovieRating.setBackgroundColor(Color.parseColor("#e74c3c"));
+            }
         }
     }
 }

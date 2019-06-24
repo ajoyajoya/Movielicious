@@ -5,10 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_background"
-    android:paddingLeft="@dimen/activity_horizontal_default"
-    android:paddingTop="@dimen/activity_horizontal_default"
-    android:paddingRight="@dimen/activity_horizontal_default"
-    android:paddingBottom="@dimen/activity_horizontal_default"
     tools:context=".MainActivity">
 
     <ListView
