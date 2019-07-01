@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+    <issue id="IconLocation">
+        <ignore path="src/main/res/drawable/blur_image_background.png" />
+        <ignore path="src/main/res/drawable/poster_a_star.jpg" />
+        <ignore path="src/main/res/drawable/poster_a_star.jpg" />
+        <ignore path="src/main/res/drawable/poster_aquaman.jpg" />
+        <ignore path="src/main/res/drawable/poster_avengerinfinity.jpg" />
+        <ignore path="src/main/res/drawable/poster_birdbox.jpg" />
+        <ignore path="src/main/res/drawable/poster_bohemian.jpg" />
+        <ignore path="src/main/res/drawable/poster_bohemian.jpg" />
+        <ignore path="src/main/res/drawable/poster_bohemian.jpg" />
+        <ignore path="src/main/res/drawable/poster_bohemian.jpg" />
+        <ignore path="src/main/res/drawable/poster_bumblebee.jpg" />
+        <ignore path="src/main/res/drawable/poster_creed.jpg" />
+        <ignore path="src/main/res/drawable/poster_deadpool.jpg" />
+        <ignore path="src/main/res/drawable/poster_dragon.jpg" />
+        <ignore path="src/main/res/drawable/poster_dragonball.jpg" />
+    </issue>
+</lint>
